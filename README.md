@@ -30,7 +30,7 @@ var video = youtubedl('http://www.youtube.com/watch?v=90AiXO1pAiA',
 // Will be called when the download starts.
 video.on('info', function(info) {
   console.log('Download started');
-  console.log('filename: ' + info.filename);
+  console.log('filename: ' + info._filename);
   console.log('size: ' + info.size);
 });
 
@@ -40,9 +40,9 @@ video.pipe(fs.createWriteStream('myvideo.mp4'));
 It will produce an output that looks like the following when ran.
 
 ```bash
-Got video info
-saving to T-ara - Number Nine - MV - 티아라-Seku9G1kT0c.mp4
-100.00%
+Download started
+filename: xxxx.mp4
+size: 1234
 ```
 
 ### Resuming partially downloaded videos
